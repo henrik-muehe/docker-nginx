@@ -8,7 +8,7 @@ def template(aliases,ip,port=8080)
 	t = <<-EOF
     server {
         listen 80;
-        server_name #{aliases.join(" ")};
+        server_name #{aliases.uniq.join(" ")};
         client_max_body_size 10M;
 
         include mime.types;
